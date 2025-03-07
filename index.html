@@ -11,52 +11,56 @@
     <body>
         <header>
             <h1>Monster Hunter API</h1>
+            <img src="imagenes/logo.png" alt="Base de Datos" class="db-image">
         </header>
-
-        <div class="container">
-            <!-- Panel lateral -->
-            <aside class="sidebar">
-                <!-- Base de datos -->
-                <div class="db-container">
-                    <img src="imagenes/folder.png" alt="Base de Datos" class="db-image">
-                    <h2>BD: BD_usuarios</h2>
+        <main>
+            <section>
+                <h2>Monstruos</h2>
+                <div id="monstruos">
+                    <ul>
+                        <li>Wyvern Pajaros</li>
+                        <li>Wyvern Brutos</li>
+                        <li>Wyvern Colmillos</li>
+                        <li>Wyvern Voladores</li>
+                        <li>Wyvern Acuaticos</li>
+                        <li>Wyvern Ancianos</li>
+                    </ul>
                 </div>
-
-                <!-- Filtros -->
-                <div class="filters-container">
-                    <img src="imagenes/filters.png" alt="Filtros" class="filters-image">
-                    <h2>Filtros</h2>
+            </section>
+            <section>
+                <h2>Armas</h2>
+                <div id="armas">
+                    <ul>
+                        <li>Espadon</li>
+                        <li>Espada y Escudo</li>
+                        <li>Espadas Dobles</li>
+                        <li>Espada Largas</li>
+                        <li>Martillo</li>
+                        <li>Cornamusa</li>
+                        <li>Lanza</li>
+                        <li>Lanza Pistola</li>
+                        <li>Hacha Espada</li>
+                        <li>Espada Cargada</li>
+                        <li>Glaive Insecto</li>
+                        <li>Arco</li>
+                        <li>Ballesta Ligera</li>
+                        <li>Ballesta Pesada</li>
+                    </ul>
                 </div>
-
-                <!-- Cajas para introducir los filtros -->
-                <input type="text" id="nameSearch" placeholder="Buscar por nombre...">
-
-                <input type="text" id="emailSearch" placeholder="Buscar por email...">
-
-                <!-- Botones para buscar según los filtros -->
-                <button id="searchByNameButton" class="filter-button">
-                    <img src="imagenes/search_name.png" alt="Buscar por nombre" class="button-icon">
-                    Buscar por nombre
-                </button>
-                
-                <button id="searchByEmailButton" class="filter-button">
-                    <img src="imagenes/search_email.png" alt="Buscar por email" class="button-icon">
-                    Buscar por email
-                </button>
-
-                <button id="showAllButton" class="filter-button all-button">
-                    <img src="imagenes/search_all.png" alt="Mostrar todos" class="button-icon">
-                    Mostrar todos los usuarios
-                </button>
-            </aside>
-
-            <!-- Contenido principal -->
-            <main class="content">
-                <h1>Usuarios recuperados</h1>
-                <div id="output" class="grid-container"></div>
-            </main>
-        </div>
-
+            </section>
+            <section>
+                <h2>Armaduras</h2>
+                <div id="armaduras"></div>
+            </section>
+            <section>
+                <h2>Decoraciones</h2>
+                <div id="decoraciones"></div>
+            </section>
+            <section>
+                <h2>Mapas</h2>
+                <div id="mapas"></div>
+            </section>
+        </main>
         <footer>
             <p>Lenguajes de marcas y sistemas de gestión de información. Unidad Didáctica 05 - JSON y los SGBD</p>
         </footer>
