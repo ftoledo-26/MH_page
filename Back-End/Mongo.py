@@ -1,20 +1,24 @@
 from pymongo import MongoClient
 import json
 import os
+import creacionJSON as cj
 
+ListBase = ["monstruos", "armas", "lugares", "items", "armaduras"]
+cj.inicio()
 
-ListasURL = ["https://mhw-db.com/monsters", "https://mhw-db.com/armor", "https://mhw-db.com/weapons",
-                "https://mhw-db.com/skills", "https://mhw-db.com/items"]
 
 try:
     client = MongoClient("mongodb://localhost:27017/")
-    monsters = json.load(open("monsters.json"))
     database = client['MH_Wiki']
 
+    for i in ListBase:
+        monsters = json.load(open(i+".json"))
+    
+
     # Luego creo la api y la meto en las tablas y creo el script para que se ejecute en el servidor 
-    for monster in monsters:
-        database['Monstruos'].insert_one(monster)
-        os.remove("monsters.json")
+        for monster in monsters:
+            database[i.capitalize()].insert_one(monster)
+        os.remove(i+".json")
    # database['Armadura'].insert_one({"nombre": "Armadura Rathalos", "defensa": 50})
     #database['Arma'].insert_one({"nombre": "Espada Llamarada", "ataque": 120})
     #database['Habilidad'].insert_one({"nombre": "Resistencia al fuego", "nivel": 3})
