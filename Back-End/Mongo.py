@@ -19,12 +19,6 @@ try:
         for monster in monsters:
             database[i.capitalize()].insert_one(monster)
         os.remove(i+".json")
-   # database['Armadura'].insert_one({"nombre": "Armadura Rathalos", "defensa": 50})
-    #database['Arma'].insert_one({"nombre": "Espada Llamarada", "ataque": 120})
-    #database['Habilidad'].insert_one({"nombre": "Resistencia al fuego", "nivel": 3})
-    #database['Objeto'].insert_one({"nombre": "Poción", "efecto": "Recupera salud"})
-    #database['Usuarios'].insert_one({"username": "Hunter01", "rango": "Alto"})
-
 
     print("Bases de datos disponibles:", client.list_database_names())
     print("Colecciones en MH_Wiki:", database.list_collection_names())
