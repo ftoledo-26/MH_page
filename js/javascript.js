@@ -18,7 +18,35 @@
 
 
 const PORT = 3000;
-const coleccion = "Monstruos"
-function mostrarMonstruos(){
-    
+const coleccion = "Monstruos";
+const habitat = document.getElementById("monster_main");
+
+function mostrarMonstruos() {
+    habitat.innerHTML = "";
+    fetch(`http://localhost:${PORT}/monstruos`)
+        .then(response => response.json())
+        .then(data => {
+            let ocupa = document.getElementById("monster_container");
+            ocupa.innerHTML = data.map(monstruo => {
+                return `<div class="tarjeta-normal">
+                    <h1>${monstruo.name}</h1>
+                    <div>
+                        <img src="" alt="${monstruo.name}">
+                    </div>
+                    <div>
+                        <th>Clasificacion</th>
+                        <td>${monstruo.species}</td>
+                    </div>
+                    <div>
+                        <th>${monstruo.elemonts}</th>
+                        <td>tipo-elementos</td>
+                    </div>
+                    <div>
+                        <p>${monstruo.description}</p>
+                    </div>
+                </div>`;
+            }).join('');
+        });
 }
+
+mostrarMonstruos();
