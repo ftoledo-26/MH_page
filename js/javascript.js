@@ -17,3 +17,8 @@
 //manteniendo el click
 
 
+const PORT = 3000;
+const coleccion = "Monstruos"
+function mostrarMonstruos(){
+    
+}
