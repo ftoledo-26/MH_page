@@ -19,7 +19,7 @@ try:
         for monster in monsters:
             database[i.capitalize()].insert_one(monster)
         os.remove(i+".json")
-
+    database["Usuarios"].insert_one({"Nombre": "Admin", "Contraseña": "Admin"})
     print("Bases de datos disponibles:", client.list_database_names())
     print("Colecciones en MH_Wiki:", database.list_collection_names())
 
