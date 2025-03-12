@@ -70,3 +70,12 @@ ul, ol {
 /* Estilos para la pagina de objetos */
 
 
+/*Estilos Inicio sesion*/
+.Usuario_body{
+    background-image: url(imagenes/fondo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
