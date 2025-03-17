@@ -18,35 +18,48 @@
 
 
 const PORT = 3000;
-const coleccion = "Monstruos";
 const habitat = document.getElementById("monster_main");
 
 function mostrarMonstruos() {
     habitat.innerHTML = "";
-    fetch(`http://localhost:${PORT}/monstruos`)
-        .then(response => response.json())
-        .then(data => {
-            let ocupa = document.getElementById("monster_container");
-            ocupa.innerHTML = data.map(monstruo => {
-                return `<div class="tarjeta-normal">
-                    <h1>${monstruo.name}</h1>
+    fetch(`http://localhost:3000/Monstruos`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);  // Verifica los datos
+        let ocupa = document.getElementById("monster_container");
+        ocupa.innerHTML = data.map(monstruo => {
+            return `
+                <div class="tarjeta-normal">
+                    <h1></h1>
                     <div>
-                        <img src="" alt="${monstruo.name}">
+                        <img src="../imagenes/logo.png" alt="">
                     </div>
                     <div>
-                        <th>Clasificacion</th>
-                        <td>${monstruo.species}</td>
+                        <strong>Clasificación:</strong>
+                        <span></span>
                     </div>
                     <div>
-                        <th>${monstruo.elemonts}</th>
-                        <td>tipo-elementos</td>
+                        <strong>Elemento(s):</strong>
+                        <span>sfd</span>
                     </div>
                     <div>
-                        <p>${monstruo.description}</p>
+                        <p>sdf</p>
                     </div>
-                </div>`;
-            }).join('');
-        });
+                </div>
+            `;
+        }).join('');
+    })
+    .catch(error => {
+        console.error('Error al cargar los monstruos:', error);
+    });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    mostrarMonstruos(); // Llamas a la función después de que el DOM esté listo
+});
 
-mostrarMonstruos();
+

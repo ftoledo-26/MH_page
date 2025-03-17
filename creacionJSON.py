@@ -101,3 +101,4 @@ def inicio():
                 get_armadura(URL)
                 count += 1
                 print("Armaduras")
+inicio()
